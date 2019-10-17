@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class WordsList {
-
+    // comptage du nombre de mots
     public static int nbOfWord(String fileName) throws FileNotFoundException {
 
         HashMap<String, Integer> wordCollec = new HashMap<String, Integer>();
@@ -28,6 +28,7 @@ public class WordsList {
         return wordCollec.size();
     }
 
+    // comptage du nombre de lignes
     public static int nbOfLine(String fileName) throws FileNotFoundException {
 
         ArrayList<String> lines = new ArrayList<>();

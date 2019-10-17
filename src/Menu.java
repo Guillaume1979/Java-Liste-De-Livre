@@ -13,18 +13,17 @@ public class Menu {
         // Affichage du menu qui propose les choix
         System.out.println("1-Lister les fichiers\n2-Ajouter un fichier\n3-Supprimer un fichier\n4-Afficher des informations sur un livre\n5-Quitter le programme");
         System.out.println("Choix :");
-
+        //Gestion des exceptions avec un try...catch afin d'éviter un problème lié à une mauvaise saisie
         try {
 
             int choice = sc.nextInt();
             sc.nextLine();
 
-
+            //Gestion des différents cas selon la saisie par l'utilisateur
             switch (choice) {
                 case 1:
-                    //int sizeArray = listOfBooks2.size();
+                    //Affichage de la liste des livres avec une numérotation qui commence à 1 et pas 0 (plus logique pour l'utilisateur)
                     for (int i = 0; i != listOfBooks2.size(); i++) {
-                        //Affichage de la liste avec une numérotation qui commence à 1 et pas 0 (plus logique pour l'utilisateur)
                         System.out.println("Livre " + (i + 1) + " : " + listOfBooks2.get(i));
                     }
                     System.out.println();
@@ -39,7 +38,7 @@ public class Menu {
                     System.out.println();
                     menuDisplay(listOfBooks2, sc);
                     break;
-                //case 2bis: numérotation à revoir
+
                 case 3:
                     System.out.println("Saisir le numéro du fichier à supprimer dans la liste suivante :");
 
@@ -86,6 +85,7 @@ public class Menu {
 
     }
 
+    // method qui gère le sous-menu du choix 4
     public static void subChoice4(ArrayList listOfBooks3) throws FileNotFoundException {
 
         System.out.println("//  Détail d'un livre  //");
